@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+        }
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>User Dashboard</h1>
+</div>
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Messages</a>
+    <a href="#">Settings</a>
+    <a href="#">Log out</a>
+</div>
+<div class="main-content">
+    <div class="card">
+        <h2>Welcome, User!</h2>
+        <p>This is your dashboard where you can manage your profile, view messages, and adjust your settings.</p>
+    </div>
+    <!-- More cards or content can be added here -->
+</div>
+</body>
+</html>
