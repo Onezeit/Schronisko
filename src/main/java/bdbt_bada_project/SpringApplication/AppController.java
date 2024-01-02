@@ -1,4 +1,5 @@
 package bdbt_bada_project.SpringApplication;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,7 @@ public class AppController implements WebMvcConfigurer {
     }
 
     @Controller
-    public class DashboardController
-    {
+    public class DashboardController {
         @RequestMapping
                 ("/main"
                 )
@@ -32,24 +32,22 @@ public class AppController implements WebMvcConfigurer {
             (request.isUserInRole
                     ("ADMIN")) {
                 return "redirect:/main_admin";
-            }
-            else if
+            } else if
             (request.isUserInRole
                             ("USER")) {
                 return "redirect:/main_user";
-            }
-            else
-            {
+            } else {
                 return "redirect:/index";
             }
         }
     }
 
-    @RequestMapping(value={"/main_admin"})
+    @RequestMapping(value = {"/main_admin"})
     public String showAdminPage(Model model) {
         return "admin/main_admin";
     }
-    @RequestMapping(value={"/main_user"})
+
+    @RequestMapping(value = {"/main_user"})
     public String showUserPage(Model model) {
         return "user/main_user";
     }
