@@ -28,14 +28,14 @@ public class ZwierzetaDAO {
     public void save(Zwierzeta Zwierzeta) {
     }
     /* Read – odczytywanie danych z bazy */
-    public Zwierzeta get(int nrZwierzecia) {
+    public Zwierzeta get(Integer nrZwierzecia) {
         return null;
     }
     /* Update – aktualizacja danych */
     public void update(Zwierzeta Zwierzeta) {
     }
     /* Delete – wybrany rekord z danym id */
-    public void delete(int nrZwierzecia) {
+    public void delete(Integer nrZwierzecia) {
     }
 
 

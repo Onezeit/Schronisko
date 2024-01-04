@@ -24,7 +24,7 @@ public class AppController implements WebMvcConfigurer {
         model.addAttribute("listZwierzeta", listZwierzeta);
         return "index";
     }
-
+    
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/").setViewName("index");

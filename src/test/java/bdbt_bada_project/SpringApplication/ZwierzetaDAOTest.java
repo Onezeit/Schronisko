@@ -29,8 +29,7 @@ class ZwierzetaDAOTest {
     @Test
     void list() {
         List<Zwierzeta> listZwierzeta = dao.list();
-
-        assertTrue(listZwierzeta.isEmpty());
+        assertFalse(listZwierzeta.isEmpty());
     }
 
     @Test

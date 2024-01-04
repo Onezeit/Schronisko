@@ -1,5 +1,9 @@
 package bdbt_bada_project.SpringApplication;
 
+import java.math.BigDecimal;
+import java.util.Date; // or use java.time.LocalDate if you are using Java 8 or later
+
+
 public class Zwierzeta {
     private Integer nrZwierzecia;
     private String plec;
@@ -7,7 +11,7 @@ public class Zwierzeta {
     private float wzrost;
     private float dlugosc;
     private String kolor;
-    private Integer chip;
+    private Boolean chip;
     private Integer wiek;
     private String gatunek;
     private String rasaZwierzecia;
@@ -19,7 +23,7 @@ public class Zwierzeta {
 
     }
 
-    public Zwierzeta(int nrZwierzecia, String plec, float waga, float wzrost, float dlugosc, String kolor, int chip, int wiek, String gatunek, String rasaZwierzecia, String dataPrzyjecia, int nrSchroniska, int numerAdopcji) {
+    public Zwierzeta(Integer nrZwierzecia, String plec, float waga, float wzrost, float dlugosc, String kolor, Boolean chip, Integer wiek, String gatunek, String rasaZwierzecia, String dataPrzyjecia, Integer nrSchroniska, Integer numerAdopcji) {
         this.nrZwierzecia = nrZwierzecia;
         this.plec = plec;
         this.waga = waga;
@@ -35,7 +39,7 @@ public class Zwierzeta {
         this.numerAdopcji = numerAdopcji;
     }
 
-    public int getNrZwierzecia() {
+    public Integer getNrZwierzecia() {
         return nrZwierzecia;
     }
 
@@ -59,11 +63,11 @@ public class Zwierzeta {
         return kolor;
     }
 
-    public int getChip() {
+    public Boolean getChip() {
         return chip;
     }
 
-    public int getWiek() {
+    public Integer getWiek() {
         return wiek;
     }
 
@@ -79,15 +83,15 @@ public class Zwierzeta {
         return dataPrzyjecia;
     }
 
-    public int getNrSchroniska() {
+    public Integer getNrSchroniska() {
         return nrSchroniska;
     }
 
-    public int getNumerAdopcji() {
+    public Integer getNumerAdopcji() {
         return numerAdopcji;
     }
 
-    public void setNrZwierzecia(int nrZwierzecia) {
+    public void setNrZwierzecia(Integer nrZwierzecia) {
         this.nrZwierzecia = nrZwierzecia;
     }
 
@@ -111,11 +115,11 @@ public class Zwierzeta {
         this.kolor = kolor;
     }
 
-    public void setChip(int chip) {
+    public void setChip(Boolean chip) {
         this.chip = chip;
     }
 
-    public void setWiek(int wiek) {
+    public void setWiek(Integer wiek) {
         this.wiek = wiek;
     }
 
@@ -131,11 +135,11 @@ public class Zwierzeta {
         this.dataPrzyjecia = dataPrzyjecia;
     }
 
-    public void setNrSchroniska(int nrSchroniska) {
+    public void setNrSchroniska(Integer nrSchroniska) {
         this.nrSchroniska = nrSchroniska;
     }
 
-    public void setNumerAdopcji(int numerAdopcji) {
+    public void setNumerAdopcji(Integer numerAdopcji) {
         this.numerAdopcji = numerAdopcji;
     }
 
