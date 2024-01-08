@@ -25,14 +25,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder getPasswordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+    public PasswordEncoder getPasswordEncoder() { return NoOpPasswordEncoder.getInstance();
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 
+                .antMatchers("/main_admin").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/main_user").hasAuthority("ROLE_USER")
                 .antMatchers("/", "/index").permitAll()
                 .antMatchers("/resources/static/**").permitAll()
                 .antMatchers("/main").authenticated()

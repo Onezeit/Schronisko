@@ -1,166 +1,158 @@
 package bdbt_bada_project.SpringApplication;
 
-import java.math.BigDecimal;
-import java.util.Date; // or use java.time.LocalDate if you are using Java 8 or later
-
-
 public class Zwierzeta {
-    private Integer nrZwierzecia;
-    private String plec;
-    private float waga;
-    private float wzrost;
-    private float dlugosc;
-    private String kolor;
-    private Boolean chip;
-    private Integer wiek;
-    private String gatunek;
-    private String rasaZwierzecia;
-    private String dataPrzyjecia;
-    private Integer nrSchroniska;
-    private Integer numerAdopcji;
+    private Integer Nr_zwierzecia;
+    private String Plec;
+    private float Waga;
+    private float Wzrost;
+    private float Dlugosc;
+    private String Kolor;
+    private Boolean Chip;
+    private Integer Wiek;
+    private String Gatunek;
+    private String Rasa_zwierzecia;
+    private String Data_przyjecia;
+    private Integer Nr_schroniska;
+    private Integer Numer_adopcji;
 
-    public Zwierzeta() {
-
+    public Zwierzeta(){
+    }
+    public Zwierzeta(Integer Nr_zwierzecia, String Plec, float Waga, float Wzrost, float Dlugosc, String Kolor, Boolean Chip, Integer Wiek, String Gatunek, String Rasa_zwierzecia, String Data_przyjecia, Integer Nr_schroniska, Integer Numer_adopcji) {
+        this.Nr_zwierzecia = Nr_zwierzecia;
+        this.Plec = Plec;
+        this.Waga = Waga;
+        this.Wzrost = Wzrost;
+        this.Dlugosc = Dlugosc;
+        this.Kolor = Kolor;
+        this.Chip = Chip;
+        this.Wiek = Wiek;
+        this.Gatunek = Gatunek;
+        this.Rasa_zwierzecia = Rasa_zwierzecia;
+        this.Data_przyjecia = Data_przyjecia;
+        this.Nr_schroniska = Nr_schroniska;
+        this.Numer_adopcji = Numer_adopcji;
     }
 
-    public Zwierzeta(Integer nrZwierzecia, String plec, float waga, float wzrost, float dlugosc, String kolor, Boolean chip, Integer wiek, String gatunek, String rasaZwierzecia, String dataPrzyjecia, Integer nrSchroniska, Integer numerAdopcji) {
-        this.nrZwierzecia = nrZwierzecia;
-        this.plec = plec;
-        this.waga = waga;
-        this.wzrost = wzrost;
-        this.dlugosc = dlugosc;
-        this.kolor = kolor;
-        this.chip = chip;
-        this.wiek = wiek;
-        this.gatunek = gatunek;
-        this.rasaZwierzecia = rasaZwierzecia;
-        this.dataPrzyjecia = dataPrzyjecia;
-        this.nrSchroniska = nrSchroniska;
-        this.numerAdopcji = numerAdopcji;
-    }
-
-    public Integer getNrZwierzecia() {
-        return nrZwierzecia;
+    public Integer getNr_zwierzecia() {
+        return Nr_zwierzecia;
     }
 
     public String getPlec() {
-        return plec;
+        return Plec;
     }
 
     public float getWaga() {
-        return waga;
+        return Waga;
     }
 
     public float getWzrost() {
-        return wzrost;
+        return Wzrost;
     }
 
     public float getDlugosc() {
-        return dlugosc;
+        return Dlugosc;
     }
 
     public String getKolor() {
-        return kolor;
+        return Kolor;
     }
 
     public Boolean getChip() {
-        return chip;
+        return Chip;
     }
 
     public Integer getWiek() {
-        return wiek;
+        return Wiek;
     }
 
     public String getGatunek() {
-        return gatunek;
+        return Gatunek;
     }
 
-    public String getRasaZwierzecia() {
-        return rasaZwierzecia;
+    public String getRasa_zwierzecia() {
+        return Rasa_zwierzecia;
     }
 
-    public String getDataPrzyjecia() {
-        return dataPrzyjecia;
+    public String getData_przyjecia() {
+        return Data_przyjecia;
     }
 
-    public Integer getNrSchroniska() {
-        return nrSchroniska;
+    public Integer getNr_schroniska() {
+        return Nr_schroniska;
     }
 
-    public Integer getNumerAdopcji() {
-        return numerAdopcji;
+    public Integer getNumer_adopcji() {
+        return Numer_adopcji;
     }
 
-    public void setNrZwierzecia(Integer nrZwierzecia) {
-        this.nrZwierzecia = nrZwierzecia;
+    public void setNr_zwierzecia(Integer Nr_zwierzecia) {
+        this.Nr_zwierzecia = Nr_zwierzecia;
     }
 
-    public void setPlec(String plec) {
-        this.plec = plec;
+    public void setPlec(String Plec) {
+        this.Plec = Plec;
     }
 
-    public void setWaga(float waga) {
-        this.waga = waga;
+    public void setWaga(float Waga) {
+        this.Waga = Waga;
     }
 
-    public void setWzrost(float wzrost) {
-        this.wzrost = wzrost;
+    public void setWzrost(float Wzrost) {
+        this.Wzrost = Wzrost;
     }
 
-    public void setDlugosc(float dlugosc) {
-        this.dlugosc = dlugosc;
+    public void setDlugosc(float Dlugosc) {
+        this.Dlugosc = Dlugosc;
     }
 
-    public void setKolor(String kolor) {
-        this.kolor = kolor;
+    public void setKolor(String Kolor) {
+        this.Kolor = Kolor;
     }
 
-    public void setChip(Boolean chip) {
-        this.chip = chip;
+    public void setChip(Boolean Chip) {
+        this.Chip = Chip;
     }
 
-    public void setWiek(Integer wiek) {
-        this.wiek = wiek;
+    public void setWiek(Integer Wiek) {
+        this.Wiek = Wiek;
     }
 
-    public void setGatunek(String gatunek) {
-        this.gatunek = gatunek;
+    public void setGatunek(String Gatunek) {
+        this.Gatunek = Gatunek;
     }
 
-    public void setRasaZwierzecia(String rasaZwierzecia) {
-        this.rasaZwierzecia = rasaZwierzecia;
+    public void setRasa_zwierzecia(String Rasa_zwierzecia) {
+        this.Rasa_zwierzecia = Rasa_zwierzecia;
     }
 
-    public void setDataPrzyjecia(String dataPrzyjecia) {
-        this.dataPrzyjecia = dataPrzyjecia;
+    public void setData_przyjecia(String Data_przyjecia) {
+        this.Data_przyjecia = Data_przyjecia;
     }
 
-    public void setNrSchroniska(Integer nrSchroniska) {
-        this.nrSchroniska = nrSchroniska;
+    public void setNr_schroniska(Integer Nr_schroniska) {
+        this.Nr_schroniska = Nr_schroniska;
     }
 
-    public void setNumerAdopcji(Integer numerAdopcji) {
-        this.numerAdopcji = numerAdopcji;
+    public void setNumer_adopcji(Integer Numer_adopcji) {
+        this.Numer_adopcji = Numer_adopcji;
     }
 
     @Override
     public String toString() {
         return "Zwierzeta{" +
-                "nrZwierzecia=" + nrZwierzecia +
-                ", plec='" + plec + '\'' +
-                ", waga=" + waga +
-                ", wzrost=" + wzrost +
-                ", dlugosc=" + dlugosc +
-                ", kolor='" + kolor + '\'' +
-                ", chip=" + chip +
-                ", wiek=" + wiek +
-                ", gatunek='" + gatunek + '\'' +
-                ", rasaZwierzecia='" + rasaZwierzecia + '\'' +
-                ", dataPrzyjecia='" + dataPrzyjecia + '\'' +
-                ", nrSchroniska=" + nrSchroniska +
-                ", numerAdopcji=" + numerAdopcji +
+                "Nr_zwierzecia=" + Nr_zwierzecia +
+                ", Plec='" + Plec + '\'' +
+                ", Waga=" + Waga +
+                ", wzrost=" + Wzrost +
+                ", dlugosc=" + Dlugosc +
+                ", kolor='" + Kolor + '\'' +
+                ", chip=" + Chip +
+                ", wiek=" + Wiek +
+                ", gatunek='" + Gatunek + '\'' +
+                ", Rasa_zwierzecia='" + Rasa_zwierzecia + '\'' +
+                ", Data_przyjecia='" + Data_przyjecia + '\'' +
+                ", Nr_schroniska=" + Nr_schroniska +
+                ", Numer_adopcji=" + Numer_adopcji +
                 '}';
     }
-
-
 }

@@ -15,15 +15,19 @@ public class MyErrorController implements ErrorController {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         if (status != null) {
             Integer statusCode = Integer.valueOf(status.toString());
-            if (statusCode == HttpStatus.FORBIDDEN.value()) {
+            if(statusCode == HttpStatus.FORBIDDEN.value()) {
                 return "errors/403";
-            } else if (statusCode == HttpStatus.NOT_FOUND.value()) {
+            }
+            else if(statusCode == HttpStatus.NOT_FOUND.value()) {
                 return "errors/404";
-            } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+            }
+            else if(statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
                 return "errors/500";
-            } else if (statusCode == HttpStatus.GATEWAY_TIMEOUT.value()) {
+            }
+            else if(statusCode == HttpStatus.GATEWAY_TIMEOUT.value()) {
                 return "errors/504";
-            } else {
+            }
+            else {
                 return "errors/other";
             }
         }

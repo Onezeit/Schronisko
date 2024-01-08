@@ -14,17 +14,7 @@ import java.util.List;
 @Configuration
 public class AppController implements WebMvcConfigurer {
 
-    @Autowired
-    private ZwierzetaDAO dao;
 
-    @RequestMapping("/")
-    public String viewHomePage(Model model) {
-        /* Import java.util.List */
-        List<Zwierzeta> listZwierzeta = dao.list();
-        model.addAttribute("listZwierzeta", listZwierzeta);
-        return "index";
-    }
-    
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/").setViewName("index");
@@ -34,35 +24,39 @@ public class AppController implements WebMvcConfigurer {
         registry.addViewController("/main_admin").setViewName("admin/main_admin");
         registry.addViewController("/main_user").setViewName("user/main_user");
     }
-
     @Controller
     public class DashboardController {
-        @RequestMapping
-                ("/main"
-                )
-        public String defaultAfterLogin
-                (HttpServletRequest request) {
+        @Autowired
+        private ZwierzetaDAO dao;
+        @RequestMapping("/main")
+        public String defaultAfterLogin(HttpServletRequest request) {
             if
-            (request.isUserInRole
-                    ("ADMIN")) {
+            (request.isUserInRole("ADMIN")) {
                 return "redirect:/main_admin";
-            } else if
-            (request.isUserInRole
-                            ("USER")) {
+            }
+            else if (request.isUserInRole("USER")) {
                 return "redirect:/main_user";
-            } else {
+            }
+            else
+            {
                 return "redirect:/index";
             }
         }
-    }
+        @RequestMapping(value={"/"})
+        public String viewHomePage(Model model) {
+            return "index";
+        }
+        @RequestMapping(value={"/main_user"})
+        public String showUserPage(Model model) {
+            return "user/main_user";
+        }
 
-    @RequestMapping(value = {"/main_admin"})
-    public String showAdminPage(Model model) {
-        return "admin/main_admin";
-    }
+        @RequestMapping("/main_admin")
+        public String showAdminPage(Model model){
+            List<Zwierzeta> listZwierzeta = dao.list();
+            model.addAttribute("listZwierzeta", listZwierzeta);
 
-    @RequestMapping(value = {"/main_user"})
-    public String showUserPage(Model model) {
-        return "user/main_user";
+            return "admin/main_admin";
+        }
     }
 }

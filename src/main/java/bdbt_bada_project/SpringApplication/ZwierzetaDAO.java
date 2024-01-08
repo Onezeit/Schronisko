@@ -1,42 +1,39 @@
 package bdbt_bada_project.SpringApplication;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public class ZwierzetaDAO {
-    /* Import org.springframework.jd....Template */
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    public List<bdbt_bada_project.SpringApplication.Zwierzeta> list(){
+        String sql = "SELECT * FROM WIKTOR.\"ZWIERZETA\"";
+        List<bdbt_bada_project.SpringApplication.Zwierzeta> listZwierzeta = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(bdbt_bada_project.SpringApplication.Zwierzeta.class));
+        return listZwierzeta;
+    }
 
     public ZwierzetaDAO(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }
-    public List<Zwierzeta> list(){
-        String sql = "SELECT * FROM \"WIKTOR\".\"Zwierzeta\"";
-        List<Zwierzeta> listZwierzeta = jdbcTemplate.query(sql,
-                BeanPropertyRowMapper.newInstance(Zwierzeta.class));
 
-        return listZwierzeta;
-    }
     /* Insert – wstawianie nowego wiersza do bazy */
-    public void save(Zwierzeta Zwierzeta) {
+    public void save(bdbt_bada_project.SpringApplication.Zwierzeta Zwierzeta) {
     }
     /* Read – odczytywanie danych z bazy */
-    public Zwierzeta get(Integer nrZwierzecia) {
+    public bdbt_bada_project.SpringApplication.Zwierzeta get(int id) {
         return null;
     }
     /* Update – aktualizacja danych */
-    public void update(Zwierzeta Zwierzeta) {
+    public void update(bdbt_bada_project.SpringApplication.Zwierzeta Zwierzeta) {
     }
     /* Delete – wybrany rekord z danym id */
-    public void delete(Integer nrZwierzecia) {
+    public void delete(int id) {
     }
-
 
 }
