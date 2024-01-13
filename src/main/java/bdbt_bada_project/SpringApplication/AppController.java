@@ -4,7 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -58,5 +62,37 @@ public class AppController implements WebMvcConfigurer {
 
             return "admin/main_admin";
         }
+
+        @RequestMapping("/new")
+        public String showNewForm(Model model) {
+            Zwierzeta zwierzeta = new Zwierzeta();
+            model.addAttribute("zwierzeta", zwierzeta);
+
+            return "new_form";
+        }
+
+        @RequestMapping(value = "/save", method = RequestMethod.POST)
+        public String save(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta) {
+            dao.save(zwierzeta);
+
+            return "redirect:/";
+        }
+
+        @RequestMapping("/edit/{Nr_zwierzecia}")
+        public ModelAndView showEditForm(@PathVariable(name = "Nr_zwierzecia") int Nr_zwierzecia) {
+            ModelAndView mav = new ModelAndView("edit_form");
+            Zwierzeta zwierzeta = dao.get(Nr_zwierzecia);
+            mav.addObject("zwierzeta", zwierzeta);
+
+            return mav;
+        }
+
+        @RequestMapping(value = "/update", method = RequestMethod.POST)
+        public String update(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta) {
+            dao.update(zwierzeta);
+
+            return "redirect:/";
+        }
+
     }
 }

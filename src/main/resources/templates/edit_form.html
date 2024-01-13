@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<div align="center">
+  <!-- Page header -->
+  <h1>Edit Sale</h1>
+  <!-- End header line -->
+  <br/>
+  <form> action="th:action="@{/update}" th:object="${zwierzeta}" method="post"
+  <!-- Table row -->
+  <table border = "1" cellpadding = "10">
+    <tr>
+      <td>Nr_zwierzecia:</td>
+      <td><input type="text" th:field="*{Nr_zwierzecia}" readonly="readonly"/></td>
+    </tr>
+    <tr>
+      <td>Plec:</td>
+      <td><input type="text" th:field="*{Plec}"/></td>
+    </tr>
+    <tr>
+      <td>Waga:</td>
+      <td><input type="text" th:field="*{Waga}"/></td>
+    </tr>
+    <tr>
+      <td>Wzrost:</td>
+      <td><input type="text" th:field="*{Wzrost}"/></td>
+    </tr>
+    <tr>
+      <td>Dlugosc:</td>
+      <td><input type="text" th:field="*{Dlugosc}"/></td>
+    </tr>
+    <tr>
+      <td>Kolor:</td>
+      <td><input type="text" th:field="*{Kolor}"/></td>
+    </tr>
+    <tr>
+      <td>Chip:</td>
+      <td><input type="text" th:field="*{Chip}"/></td>
+    </tr>
+    <tr>
+      <td>Wiek:</td>
+      <td><input type="text" th:field="*{Wiek}"/></td>
+    </tr>
+    <tr>
+      <td>Gatunek:</td>
+      <td><input type="text" th:field="*{Gatunek}"/></td>
+    </tr>
+    <tr>
+      <td>Rasa_zwierzecia:</td>
+      <td><input type="text" th:field="*{Rasa_zwierzecia}"/></td>
+    </tr>
+    <tr>
+      <td>Data_przyjecia:</td>
+      <td><input type="text" th:field="*{Data_przyjecia}"/></td>
+    </tr>
+    <tr>
+      <td>Wz_schroniska:</td>
+      <td><input type="text" th:field="*{Nr_schroniska}"/></td>
+    </tr>
+    <tr>
+      <td>Numer_adopcji:</td>
+      <td><input type="text" th:field="*{Numer_adopcji}"/></td>
+    </tr>
+    <!-- Button save -->
+    <tr>
+      <td colspan="2"><button type="submit">Save</button></td>
+    </tr>
+  </table>
+  </form>
+</div>
+
+
+</body>
+</html>

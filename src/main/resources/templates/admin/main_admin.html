@@ -93,6 +93,9 @@
         <p>Here is your admin dashboard where you can manage users, view statistics, and customize settings.</p>
     </div>
 
+    <!-- Break line -->
+    <br><br/>
+
     <!-- Table -->
     <table border="1" cellpadding="10">
         <!-- Table header -->
@@ -130,6 +133,9 @@
             <td th:text="${zwierzeta.Data_przyjecia}">dataPrzyjecia</td>
             <td th:text="${zwierzeta.Nr_schroniska}">nrSchroniska</td>
             <td th:text="${zwierzeta.Numer_adopcji}">numerAdopcji</td>
+            <td>
+                <a th:href="@{'/edit/' + ${zwierzeta.Nr_zwierzecia}}">Edit</a>
+            </td>
 
         </tr>
         </tbody>
