@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
+    <style th:inline="text">
+     body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
+            background-size: cover;
+            margin-top: 50px; /* Adjusted to accommodate the top bar */
+            }
+
+
+
+        /* Add the top bar styling */
+        .top-bar {
+            background-color: #191919;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px;
+        }
+
+        .top-bar-text{
+            display: block;
+            color: white;
+            display: block;
+            margin-right: 1000px;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .home-button {
+            color: white;
+            font-weight: bold;
+            margin-right: 75px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-button:hover {
+            color: #5D4037;
+        }
+
+
+        .main-button {
+            color: white;
+            font-weight: bold;
+            margin-right: -25px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .main-button:hover {
+            color: #5D4037;
+        }
+
+
+        .login-button {
+            color: white;
+            font-weight: bold;
+            margin-right: -25px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .login-button:hover {
+            color: #5D4037;
+        }
+
+        .header {
+            background-color: #191919;
+            color: white;
+            font-weight: bold;
+            padding: 0px x20px;
+            text-align: center;
+            height: 80px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #191919;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+        }
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 23px;
+        }
+        .sidebar a:hover {
+            color: #5D4037;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
+    <a href="#" class="nav-link main-button" >Main</a>
+    <a href="#" class="nav-link login-button" >Login</a>
+
+
+
+</div>
+
+
+<div class="header">
+    <h1>Admin Dashboard</h1>
+</div>
+<div class="sidebar">
+    <form method="post" th:action="@{/index}">
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Settings</a>
+        <a href="#">Resources</a>
+
+        <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout
+        </button>
+    </form>
+</div>
+
+<div class="main-content">
+    <div class="card">
+        <h2>Welcome, Admin!</h2>
+        <p>Here is your admin dashboard where you can manage users, view statistics, and customize settings.</p>
+    </div>
+
+    <!-- Table -->
+    <table border="1" cellpadding="10">
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>nrZwierzecia</th>
+            <th>plec</th>
+            <th>waga</th>
+            <th>wzrost</th>
+            <th>dlugosc</th>
+            <th>kolor</th>
+            <th>chip</th>
+            <th>wiek</th>
+            <th>gatunek</th>
+            <th>rasaZwierzecia</th>
+            <th>dataPrzyjecia</th>
+            <th>nrSchroniska</th>
+            <th>numerAdopcji</th>
+        </tr>
+        </thead>
+
+        <!-- Table body -->
+        <tbody>
+        <tr th:each="zwierzeta : ${listZwierzeta}">
+            <td th:text="${zwierzeta.Nr_zwierzecia}">nrZwierzecia</td>
+            <td th:text="${zwierzeta.Plec}">plec</td>
+            <td th:text="${zwierzeta.Waga}">waga</td>
+            <td th:text="${zwierzeta.Wzrost}">wzrost</td>
+            <td th:text="${zwierzeta.Dlugosc}">dlugosc</td>
+            <td th:text="${zwierzeta.Kolor}">kolor</td>
+            <td th:text="${zwierzeta.Chip ? 'Tak' : 'Nie'}">chip</td>
+            <td th:text="${zwierzeta.Wiek}">wiek</td>
+            <td th:text="${zwierzeta.Gatunek}">gatunek</td>
+            <td th:text="${zwierzeta.Rasa_zwierzecia}">rasaZwierzecia</td>
+            <td th:text="${zwierzeta.Data_przyjecia}">dataPrzyjecia</td>
+            <td th:text="${zwierzeta.Nr_schroniska}">nrSchroniska</td>
+            <td th:text="${zwierzeta.Numer_adopcji}">numerAdopcji</td>
+
+        </tr>
+        </tbody>
+        <p th:text="${zwierzeta}">List Zwierzeta: </p>
+    </table>
+</div>
+</body>
+</html>

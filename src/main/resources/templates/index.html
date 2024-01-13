@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome Page</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
+
+    <style th:inline="text">
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
+            background-size: cover;
+            margin-top: 50px; /* Adjusted to accommodate the top bar */
+}
+
+
+        /* Add the top bar styling */
+        .top-bar {
+            background-color: #191919;
+            height: 50px; /* Extended by 10 pixels */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px;
+        }
+
+        .top-bar-text{
+            display: block;
+            color: white;
+            display: block;
+            margin-right: 1000px;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .home-button {
+            color: white;
+            font-weight: bold;
+            margin-right: 75px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-button:hover {
+            color: #5D4037;
+        }
+
+
+        .main-button {
+            color: white;
+            font-weight: bold;
+            margin-right: -25px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .main-button:hover {
+            color: #5D4037;
+        }
+
+
+        .login-button {
+            color: white;
+            font-weight: bold;
+            margin-right: -25px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .login-button:hover {
+            color: #5D4037;
+        }
+
+
+
+        .main-container {
+            margin-top: 50px;
+            margin-right: 350px;
+            margin-left: 350px;
+            height: 700px;
+            background: url([[@{http://localhost:8080/image/piesek2.png}]]) no-repeat center center fixed; /* Add background image */
+            background-size: cover; /* Use 'cover' to fully cover the container with the background image */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+}
+
+
+
+
+        .main-container label {
+            margin-bottom: 470px; /* Move the text 100 pixels from the top */
+            color: white; /* Change text color to white */
+            font-weight: bold;
+            text-stroke: 5px #191919;
+
+    }
+
+
+        .three-containers {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 20px;
+        }
+
+
+       .main-text {
+            color: #191919;
+            font-size: 38px;
+            font-weight: bold;
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top: 120px;
+
+        }
+       .small-text {
+            color: #191919;
+            font-size: 20px;
+            display: block;
+            margin: auto;
+            text-align: center;
+
+
+        }
+
+
+
+
+
+
+        .container-box {
+            width: calc(33.33% - 10px);
+            background-color: #e0e0e0;
+            margin-right: 5px;
+            height: calc(100% + 100px);
+        }
+
+
+        #container1 {
+            background-color: white; /* Zmieniony kolor na biały */
+            width: 250px;
+            margin-right: 20px;
+            margin-left: 330px; /* Adjusted value */
+            margin-top: 60px;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 300px; /* Set height to 300 pixels */
+            display: flex;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Dodany cień */
+            border-radius: 10px; /* Zaokrąglenie krawędzi */
+            text-align: center;
+        }
+        #container1 img {
+            display: block;
+            margin: auto;
+            width: 30%;
+            height: 25%;
+            object-fit: cover;
+
+            border-radius: 8px;
+
+        }
+
+        #container2 {
+            background-color: white; /* Zmieniony kolor na biały */
+            width: 250px;
+            margin-right: 20px;
+            margin-top: 60px;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 300px; /* Set height to 300 pixels */
+            display: flex;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Dodany cień */
+            border-radius: 10px; /* Zaokrąglenie krawędzi */
+            text-align: center;
+        }
+        #container2 img {
+            display: block;
+            margin: auto;
+            width: 30%;
+            height: 25%;
+            object-fit: cover;
+            border-radius: 8px;
+            }
+
+        #container3 {
+            background-color: white; /* Zmieniony kolor na biały */
+            width: 250px;
+            margin-top: 60px;
+            padding: 20px;
+            margin-right: 330px; /* Adjusted value */
+            height: 300px; /* Set height to 300 pixels */
+            display: flex;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Dodany cień */
+            border-radius: 10px; /* Zaokrąglenie krawędzi */
+            text-align: center;
+        }
+        #container3 img {
+            display: block;
+            margin: auto;
+            width: 30%;
+            height: 25%;
+            object-fit: cover;
+
+            }
+
+
+
+        .image-bar {
+            background-color: white;
+            height: 500px;
+            width: 100%;
+            margin-bottom: 150px;
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Dodany cień */
+            }
+
+
+
+
+        .image-bar img {
+            position: relative;
+            display: block;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            }
+
+        .image-bar-text{
+            position: absolute;
+            color: #191919;
+            display: block;
+            margin-right: 450px;
+            font-size: 40px;
+
+        }
+
+
+
+        .footer-bar{
+            text-align: center;
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <p class="top-bar-text">Tel: 288-511-008</p>
+    <a href="#" class="nav-link home-button">Home</a>
+    <a href="#" class="nav-link main-button" th:href="@{/main}">Main</a>
+    <a href="#" class="nav-link login-button" th:href="@{/login}">Login</a>
+
+
+</div>
+
+
+
+
+<!-- Top Container -->
+<div class="main-container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <label class="bordered-text" style="font-size:50px">Witamy na stronie schroniska!</label>
+        </div>
+    </div>
+</div>
+
+
+<p class="main-text">Czym się zajmujemy?</p>
+<p class="small-text">Nasze schronisko jest jednym z najwiekszych obiektów tego typu, w naszej ofercie są: </p>
+
+<!-- Three Containers in a Row -->
+<div class="three-containers">
+    <div class="container-box" id="container1">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="http://localhost:8080/image/dom.png" alt="Opis zdjecia"/>
+                <label style="font-size:24px">Adopcja</label>
+                <br>Otwórz swoje serce i dom na nowego przyjaciela!
+                Zapoznaj się z naszą ofertą adopcji zwierząt,
+                które czekają na kochający dom.
+            </div>
+        </div>
+    </div>
+
+    <div class="container-box" id="container2">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="http://localhost:8080/image/ksiazka.png" alt="Opis zdjecia"/>
+                <label style="font-size:24px">Szkolenia</label>
+                <br>Przygotuj się do niesamowitej przygody opieki nad zwierzętami poprzez nasze specjalistyczne szkolenia.
+            </div>
+        </div>
+    </div>
+
+    <div class="container-box" id="container3">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="http://localhost:8080/image/smycz.png" alt="Opis zdjecia"/>
+                <label style="font-size:24px">Spacery</label>
+                <br>Odkryj radość aktywności na świeżym powietrzu i zarezerwuj niezapomniane chwile spacerów ze zwierzętami.
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="image-bar">
+    <img src="http://localhost:8080/image/piesek3.png" alt="Opis zdjecia"/>
+    <p class="image-bar-text">Znajdź sowjego<br>najlepszego przyjaciela!</p>
+</div>
+
+<div class="footer-bar">
+    © 2024 Schronisko-przytulisko
+</div>
+
+<!-- Three Containers in a Row -->
+<div class="three-containers">
+    <div class="container-box">
+        <!-- Content for the first container -->
+    </div>
+    <div class="container-box">
+        <!-- Content for the second container -->
+    </div>
+    <div class="container-box">
+        <!-- Content for the third container -->
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Error Page</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+    <style th:inline="text">
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
+            background-size: cover;
+            margin-top: 50px; /* Adjusted to accommodate the top bar */
+}
+        .container{
+             margin-top: 180px;
+             margin-right: 500px;
+             margin-left: 350px;
+
+        }
+        .error {
+            color: #191919;
+            font-size: 70px;
+            font-weight: bold;
+            display: block;
+
+
+
+        }
+       .error-mini{
+            color: #191919;
+            font-size: 36px;
+            display: block;
+
+
+
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <form method="post" th:action="@{/index}">
+                <div class="form-group">
+                    <div><b><p class="error" >Error</p></b></div>
+                    <div><p  class="error-mini" >500 - Internal Server Error</p></div>
+                </div>
+                <button class="btn btn-primary" type="submit" value="Sign In">Back to home page</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
