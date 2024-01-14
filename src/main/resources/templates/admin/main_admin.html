@@ -96,9 +96,14 @@
             width: 200px;
             background-color: #191919;
             color: white;
-            height: 100vh;
+            height: 100vh; /* Use viewport height */
             padding: 20px;
             position: fixed;
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            z-index: 999; /* Make sure the sidebar is above other content */
         }
         .main-content {
             margin-left: 200px;
@@ -126,7 +131,68 @@
         }
 
 
-        
+        .new-page{
+            background-color: #191919;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            height: 30px;
+            width: 50px;
+            font-weight: bold;
+            margin-right: 75px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .new-page:hover {
+            color: #5D4037;
+        }
+
+
+        .edit{
+            background-color: #191919;
+            color: white;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            height: 30px;
+            width: 50px;
+            font-weight: bold;
+            margin-right: 75px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        .edit:hover {
+            color: #5D4037;
+        }
+
+
+        .delete{
+            background-color: #191919;
+            color: white;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            height: 30px;
+            width: 50px;
+            font-weight: bold;
+            margin-right: 75px;
+            margin: 0 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .delete:hover {
+            color: #5D4037;
+        }
     </style>
 </head>
 <body>
@@ -135,12 +201,7 @@
     <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
     <a href="#" class="nav-link main-button" >Main</a>
     <a href="#" class="nav-link login-button" >Login</a>
-
-
-
 </div>
-
-
 <div class="header">
     <h1>Admin Dashboard</h1>
 </div>
@@ -162,6 +223,10 @@
         <p>Here is your admin dashboard where you can manage users, view statistics, and customize settings.</p>
     </div>
 
+    <!-- Entry to new page -->
+    <a href="/new" class="new-page">Enter new sale</a>
+
+
     <!-- Table -->
     <table border="1" cellpadding="10">
         <!-- Table header -->
@@ -180,6 +245,7 @@
             <th>dataPrzyjecia</th>
             <th>nrSchroniska</th>
             <th>numerAdopcji</th>
+            <th>Action</th>
         </tr>
         </thead>
 
@@ -199,7 +265,12 @@
             <td th:text="${zwierzeta.Data_przyjecia}">dataPrzyjecia</td>
             <td th:text="${zwierzeta.Nr_schroniska}">nrSchroniska</td>
             <td th:text="${zwierzeta.Numer_adopcji}">numerAdopcji</td>
-
+            <td>
+                <a class="edit" th:href="@{ '/edit/' + ${zwierzeta.Nr_zwierzecia}} ">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="delete" th:href="@{'/delete/' + ${zwierzeta.Nr_zwierzecia}}">Delete</a>
+            </td>
+            </td>
         </tr>
         </tbody>
         <p th:text="${zwierzeta}">List Zwierzeta: </p>

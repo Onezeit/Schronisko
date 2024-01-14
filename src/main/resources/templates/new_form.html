@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Edit</title>
-
+  <meta charset="UTF-8"/>
+  <title>Nowe zwierze</title>
 
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
 
   <style th:inline="text">
-        body {
+      body {
             font-family: 'Times New Roman', Times, serif;
             background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
             background-size: cover;
             margin-top: 50px; /* Adjusted to accommodate the top bar */
-}
-
-
-        /* Add the top bar styling */
+            }
+ /* Add the top bar styling */
         .top-bar {
             background-color: #191919;
-            height: 50px; /* Extended by 10 pixels */
+            height: 50px;
             width: 100%;
             position: fixed;
             top: 0;
@@ -82,90 +79,82 @@
         .login-button:hover {
             color: #5D4037;
         }
+        .text{
+        color: #191919;
+        }
 
-
-
-
-        </style>
-
+  </style>
 
 </head>
 <body>
-
 <div class="top-bar">
   <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
   <a href="#" class="nav-link main-button" th:href="@{/main}">Main</a>
   <a href="#" class="nav-link login-button" th:href="@{/main}">Login</a>
 </div>
 
-<div align="center">
-  <!-- Page header -->
-  <h1>Zmodyfikuj rekord</h1>
-  <!-- End header line -->
+
+<div style="text-align: center;">
+  <h1 class ="text" >Wpisz nowy rekord</h1>
+
   <br/>
-  <form>
-    <!-- Table row -->
-    <table border = "1" cellpadding = "10">
+
+  <form th:action="@{/save}" th:object="${zwierzeta}" method="post">
+    <table style="border: 1px solid; padding: 10px; margin: auto;">
       <tr>
-        <td>Nr_zwierzecia:</td>
-        <td><input type="text" field="*{Nr_zwierzecia}" name="Nr_zwierzecia"/></td>
-      </tr>
-      <tr>
-        <td>Plec:</td>
-        <td><input type="text" field="*{Plec}" name="Plec"/></td>
+        <td>Płeć:</td>
+        <td><input type="text" field="*{zwierzeta.Plec}" name="Plec"/></td>
       </tr>
       <tr>
         <td>Waga:</td>
-        <td><input type="text" field="*{Waga}" name="Waga"/></td>
+        <td><input type="text" field="*{zwierzeta.Waga}" name="Waga"/></td>
       </tr>
       <tr>
         <td>Wzrost:</td>
-        <td><input type="text" field="*{Wzrost}" name="Wzrost"/></td>
+        <td><input type="text" field="*{zwierzeta.Wzrost}" name="Wzrost"/></td>
       </tr>
       <tr>
-        <td>Dlugosc:</td>
-        <td><input type="text" field="*{Dlugosc}" name="Dlugosc"/></td>
+        <td>Długość:</td>
+        <td><input type="text" field="*{zwierzeta.Dlugosc}" name="Dlugosc"/></td>
       </tr>
       <tr>
         <td>Kolor:</td>
-        <td><input type="text" field="*{Kolor}" name="Kolor"/></td>
+        <td><input type="text" field="*{zwierzeta.Kolor}" name="Kolor"/></td>
       </tr>
       <tr>
         <td>Chip:</td>
-        <td><input type="text" field="*{Chip}" name="Chip"/></td>
+        <td><input type="text" field="*{zwierzeta.Chip}" name="Chip"/></td>
       </tr>
       <tr>
         <td>Wiek:</td>
-        <td><input type="text" field="*{Wiek}" name="Wiek"/></td>
+        <td><input type="text" field="*{zwierzeta.Wiek}" name="Wiek"/></td>
       </tr>
       <tr>
         <td>Gatunek:</td>
-        <td><input type="text" field="*{Gatunek}" name="Gatunek"/></td>
+        <td><input type="text" field="*{zwierzeta.Gatunek}" name="Gatunek"/></td>
       </tr>
       <tr>
-        <td>Rasa_zwierzecia:</td>
-        <td><input type="text" field="*{Rasa_zwierzecia}" name="Rasa_zwierzecia"/></td>
+        <td>Rasa:</td>
+        <td><input type="text" field="*{zwierzeta.Rasa_zwierzecia}" name="Rasa_zwierzecia"/></td>
       </tr>
       <tr>
-        <td>Data_przyjecia:</td>
-        <td><input type="text" field="*{Data_przyjecia}" name="Data_przyjecia"/></td>
+        <td>Data przyjęcia:</td>
+        <td><input type="text" field="*{zwierzeta.Data_przyjecia}" name="Data_przyjecia"/></td>
       </tr>
       <tr>
-        <td>Wz_schroniska:</td>
-        <td><input type="text" field="*{Nr_schroniska}" name="Nr_schroniska"/></td>
+        <td>Numer schroniska:</td>
+        <td><input type="text" field="*{zwierzeta.Nr_schroniska}" name="Nr_schroniska"/></td>
       </tr>
       <tr>
-        <td>Numer_adopcji:</td>
-        <td><input type="text" field="*{Numer_adopcji}" name="Numer_adopcji"/></td>
+        <td>Numer adopcji:</td>
+        <td><input type="text" field="*{zwierzeta.Numer_adopcji}" name="Numer_adopcji"/></td>
       </tr>
-      <!-- Button save -->
       <tr>
-        <td colspan="2"><button type="submit">Save</button></td>
+        <td colspan="2"><button type="submit">Zapisz</button></td>
       </tr>
     </table>
   </form>
+
 </div>
-
-
 </body>
 </html>

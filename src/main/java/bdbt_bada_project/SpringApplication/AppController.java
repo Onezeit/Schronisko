@@ -67,7 +67,6 @@ public class AppController implements WebMvcConfigurer {
         public String showNewForm(Model model) {
             Zwierzeta zwierzeta = new Zwierzeta();
             model.addAttribute("zwierzeta", zwierzeta);
-
             return "new_form";
         }
 
@@ -91,6 +90,12 @@ public class AppController implements WebMvcConfigurer {
         public String update(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta) {
             dao.update(zwierzeta);
 
+            return "redirect:/";
+        }
+
+        @RequestMapping("/delete/{Nr_zwierzecia}")
+        public String delete(@PathVariable(name = "Nr_zwierzecia") int Nr_zwierzecia) {
+            dao.delete(Nr_zwierzecia);
             return "redirect:/";
         }
 
