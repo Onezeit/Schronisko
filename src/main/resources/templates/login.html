@@ -2,27 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Login Page</title>
-
+    <title>Strona logowania</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-
-</head>
-
-
-
-<style th:inline="text">
+    <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Arial', sans-serif;
             background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
             background-size: cover;
-            margin-top: 50px; /* Adjusted to accommodate the top bar */
-}
-
-
+            margin: 0;
+            padding-top: 50px; /* Height of the top bar */
+        }
 
         .top-bar {
             background-color: #191919;
-            height: 50px; /* Extended by 10 pixels */
+            height: 50px;
             width: 100%;
             position: fixed;
             top: 0;
@@ -33,156 +26,104 @@
             padding: 5px;
         }
 
-        .top-bar-text{
-            display: block;
-            color: white;
-            display: block;
-            margin-right: 1000px;
-            text-align: left;
-            margin-top: 5px;
-        }
-
-        .home-button {
+        .home-button, .main-button, .login-button {
             color: white;
             font-weight: bold;
-            margin-right: 75px;
-            margin: 0 5px;
             text-decoration: none;
-            cursor: pointer;
+            padding: 10px 15px;
             transition: color 0.3s ease;
         }
 
-        .home-button:hover {
+        .home-button:hover, .main-button:hover, .login-button:hover {
             color: #5D4037;
         }
 
-
-        .main-button {
-            color: white;
-            font-weight: bold;
-            margin-right: -25px;
-            margin: 0 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .main-button:hover {
-            color: #5D4037;
-        }
-
-
-        .login-button {
-            color: white;
-            font-weight: bold;
-            margin-right: -25px;
-            margin: 0 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .login-button:hover {
-            color: #5D4037;
-        }
-
-        .container{
-            margin-top:150px;
-            width:50%;
-            position: center;
-            height: 500px;
+        .container {
+            width: 400px; /* Fixed width for consistent form size */
             background-color: #191919;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 100px auto; /* Center the container */
             padding: 20px;
             border-radius: 10px;
-}
-
-        .form-group{
-            width: 200px;
-            background-color: #191919;
-            margin-right: 5px;
-            height: calc(33,3% + 150px);
-
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
         .form-group label {
             color: white;
             font-weight: bold;
-
-
-         .container .row .col-md-4 button.btn-primary{
-            background-color: #F8BBD0 !important;
-            color: white !important;
-            font-weight: bold !important;
-            margin: 0 5px !important;
-            text-decoration: none !important;
-            cursor: pointer !important;
-            transition: color 0.3s ease !important;
-
-
-        }
-         .container .row .col-md-4 button.btn-primary:hover {
-            background-color: #191919 !important;
         }
 
-        #error{
-            width:100%;
+        .form-control {
+            margin-bottom: 10px;
         }
 
+        button.btn-primary {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            font-weight: bold;
+            border-color: #007bff;
+            margin-top: 10px;
+            width: 100%;
+        }
 
+        button.btn-primary:hover {
+            background-color: #0056b3; /* Darker shade of blue */
+            border-color: #0056b3;
+        }
 
+        button.btn-primary:active {
+            background-color: #003580; /* Even darker shade of blue */
+            border-color: #003580;
+        }
 
+        /* Placeholder customization */
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #ccc;
+            opacity: 1; /* Firefox */
+        }
 
-</style>
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ccc;
+        }
 
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #ccc;
+        }
+    </style>
+</head>
 <body>
 <div class="top-bar">
-    <p class="top-bar-text">Tel: 288-511-008</p>
+    <p class="top-bar-text">Tel: 864-511-568</p>
     <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
-    <a href="#" class="nav-link main-button" th:href="@{/main}">Main</a>
-    <a href="#" class="nav-link login-button" >Login</a>
-
-
+    <a href="#" class="nav-link main-button" th:href="@{/main}">Strona główna</a>
+    <a href="#" class="nav-link login-button">Zaloguj się</a>
 </div>
-
-
 
 <div class="container">
-
-    <div class="row">
-        <div class="col-md-4 mt-5">
-
-            <form method="post" th:action="@{/login}">
-
-                <div class="form-group">
-                    <label for="login">Login:</label>
-                    <input id="login" type="text" placeholder="Enter login" autocomplete="off" class="form-control" name="username"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" placeholder="Enter your password" autocomplete="off" class="form-control" name="password"/>
-                </div>
-
-                <div th:if="${param.error}"  style="color:red; margin-bottom:15px display: inline-block; overflow: hidden; text-overflow: ellipsis;" >
-                    ERROR: Invalid username or password!
-                </div>
-
-                <button class="btn btn-primary custom-btn" type="submit" value="Sign In">Login</button>
-            </form>
-
-
-
+    <form method="post" th:action="@{/login}">
+        <div class="form-group">
+            <label for="login">Nazwa użytkownika:</label>
+            <input id="login" type="text" placeholder="Wpisz login" autocomplete="off" class="form-control" name="username"/>
         </div>
-    </div>
-</div>
 
+        <div class="form-group">
+            <label for="password">Hasło:</label>
+            <input id="password" type="password" placeholder="Wpisz hasło" autocomplete="off" class="form-control" name="password"/>
+        </div>
+
+        <div th:if="${param.error}" style="color:red; margin-bottom:15px; display: block;">
+            Nieprawidłowa nazwa użytkownika lub hasło!
+        </div>
+
+        <button class="btn btn-primary custom-btn" type="submit">Zaloguj się</button>
+    </form>
+</div>
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
 </body>
 </html>

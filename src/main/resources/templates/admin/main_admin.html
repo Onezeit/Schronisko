@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Panel admina</title>
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
     <style th:inline="text">
@@ -199,32 +199,32 @@
 
 <div class="top-bar">
     <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
-    <a href="#" class="nav-link main-button" >Main</a>
-    <a href="#" class="nav-link login-button" >Login</a>
+    <a href="#" class="nav-link main-button" >Strona główna</a>
+    <a href="#" class="nav-link login-button" >Zaloguj się</a>
 </div>
 <div class="header">
-    <h1>Admin Dashboard</h1>
+    <h1>Panel admina</h1>
 </div>
 <div class="sidebar">
     <form method="post" th:action="@{/index}">
         <a href="#">Profile</a>
-        <a href="#">Messages</a>
-        <a href="#">Settings</a>
-        <a href="#">Resources</a>
+        <a href="#">Wiadomości</a>
+        <a href="#">Ustawienia</a>
+        <a href="#">Zasoby</a>
 
-        <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout
+        <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
         </button>
     </form>
 </div>
 
 <div class="main-content">
     <div class="card">
-        <h2>Welcome, Admin!</h2>
-        <p>Here is your admin dashboard where you can manage users, view statistics, and customize settings.</p>
+        <h2>Jesteś zalogowany jako Admin!</h2>
+        <p>Poniżej znajduje się tabele rekordów zwierząt będących pod opieką schroniska. Możesz dodawać, edytować oraz usuwać rekordy.</p>
     </div>
 
     <!-- Entry to new page -->
-    <a href="/new" class="new-page">Enter new sale</a>
+    <a href="/new" class="new-page">Dodaj nowe zwierzę</a>
 
 
     <!-- Table -->
@@ -232,20 +232,20 @@
         <!-- Table header -->
         <thead>
         <tr>
-            <th>nrZwierzecia</th>
-            <th>plec</th>
-            <th>waga</th>
-            <th>wzrost</th>
-            <th>dlugosc</th>
-            <th>kolor</th>
-            <th>chip</th>
-            <th>wiek</th>
-            <th>gatunek</th>
-            <th>rasaZwierzecia</th>
-            <th>dataPrzyjecia</th>
-            <th>nrSchroniska</th>
-            <th>numerAdopcji</th>
-            <th>Action</th>
+            <th>Numer zwierzęcia</th>
+            <th>Płeć</th>
+            <th>Waga</th>
+            <th>Wzrost</th>
+            <th>Dlugosc</th>
+            <th>Kolor</th>
+            <th>Chip</th>
+            <th>Wiek</th>
+            <th>Gatunek</th>
+            <th>Rasa</th>
+            <th>Data przyjecia</th>
+            <th>Numer schroniska</th>
+            <th>Numer adopcji</th>
+            <th>Akcja</th>
         </tr>
         </thead>
 
@@ -266,9 +266,9 @@
             <td th:text="${zwierzeta.Nr_schroniska}">nrSchroniska</td>
             <td th:text="${zwierzeta.Numer_adopcji}">numerAdopcji</td>
             <td>
-                <a class="edit" th:href="@{ '/edit/' + ${zwierzeta.Nr_zwierzecia}} ">Edit</a>
+                <a class="edit" th:href="@{ '/edit/' + ${zwierzeta.Nr_zwierzecia}} ">Edytuj</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="delete" th:href="@{'/delete/' + ${zwierzeta.Nr_zwierzecia}}">Delete</a>
+                <a class="delete" th:href="@{'/delete/' + ${zwierzeta.Nr_zwierzecia}}">Usuń</a>
             </td>
             </td>
         </tr>

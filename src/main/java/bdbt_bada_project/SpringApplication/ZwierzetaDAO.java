@@ -55,6 +55,4 @@ public class ZwierzetaDAO {
         String sql = "DELETE FROM WIKTOR.\"ZWIERZETA\" WHERE \"Nr_zwierzecia\" = ?";
         jdbcTemplate.update(sql, Nr_zwierzecia);
     }
-
-
 }

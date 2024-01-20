@@ -98,6 +98,5 @@ public class AppController implements WebMvcConfigurer {
             dao.delete(Nr_zwierzecia);
             return "redirect:/";
         }
-
     }
 }
