@@ -9,7 +9,7 @@
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
     <style th:inline="text">
      body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Arial', sans-serif;
             background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
             background-size: cover;
             margin-top: 50px; /* Adjusted to accommodate the top bar */
@@ -190,6 +190,22 @@
             transition: color 0.3s ease;
         }
 
+        .back-to-top {
+            position: fixed;
+            bottom: 20px; /* Adjust as per the image reference */
+            right: 20px; /* Adjust as per the image reference */
+            display: block; /* Show the button */
+            z-index: 1000; /* Make sure it's above other elements */
+            cursor: pointer;
+            /* Specify the size of the button */
+            width: 50px; /* Example size, adjust as needed */
+            height: 50px; /* Example size, adjust as needed */
+            background: url('http://localhost:8080/image/top.png') no-repeat center center;
+            background-size: cover; /* This ensures the image covers the button area */
+            border: none; /* Remove border if not needed */
+            outline: none; /* Remove outline if not needed */
+        }
+
         .delete:hover {
             color: #5D4037;
         }
@@ -216,10 +232,9 @@
         </button>
     </form>
 </div>
-
 <div class="main-content">
     <div class="card">
-        <h2>Jesteś zalogowany jako Admin!</h2>
+        <h2>Witaj Adminie!</h2>
         <p>Poniżej znajduje się tabele rekordów zwierząt będących pod opieką schroniska. Możesz dodawać, edytować oraz usuwać rekordy.</p>
     </div>
 
@@ -276,5 +291,28 @@
         <p th:text="${zwierzeta}">List Zwierzeta: </p>
     </table>
 </div>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000;">
+    <img src="http://localhost:8080/image/top.png" alt="Back to Top" />
+</a>
+
+<script type="text/javascript">
+// Show the button when the page is scrolled down
+window.onscroll = function() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+document.querySelector('.back-to-top').style.display = "block";
+} else {
+document.querySelector('.back-to-top').style.display = "none";
+}
+};
+
+// Scroll to top when the button is clicked
+document.querySelector('.back-to-top').onclick = function() {
+document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+};
+</script>
+
 </body>
 </html>

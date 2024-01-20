@@ -52,6 +52,8 @@ public class AppController implements WebMvcConfigurer {
         }
         @RequestMapping(value={"/main_user"})
         public String showUserPage(Model model) {
+            List<Zwierzeta> listZwierzeta = dao.list();
+            model.addAttribute("listZwierzeta", listZwierzeta);
             return "user/main_user";
         }
 

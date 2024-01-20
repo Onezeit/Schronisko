@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ZwierzetaDAO {
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public List<Zwierzeta> list(){
         String sql = "SELECT * FROM WIKTOR.\"ZWIERZETA\"";
