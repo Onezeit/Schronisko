@@ -8,16 +8,18 @@
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
 
   <style th:inline="text">
-      body {
+        body {
             font-family: 'Arial', sans-serif;
             background: url([[@{http://localhost:8080/image/tlo2.png}]]) no-repeat center center fixed;
             background-size: cover;
             margin-top: 50px; /* Adjusted to accommodate the top bar */
-            }
- /* Add the top bar styling */
+}
+
+
+        /* Add the top bar styling */
         .top-bar {
             background-color: #191919;
-            height: 50px;
+            height: 50px; /* Extended by 10 pixels */
             width: 100%;
             position: fixed;
             top: 0;
@@ -80,15 +82,16 @@
         .login-button:hover {
             color: #5D4037;
         }
-        .text{
-        color: #191919;
-        }
 
-  </style>
+
+
+
+        </style>
 
 </head>
+
 <body>
-<div class="center">
+<div class="top-bar">
   <a href="#" class="nav-link home-button" th:href="@{/index}">Strona główna</a>
   <a href="#" class="nav-link main-button" th:href="@{/main}">Panel admina</a>
   <a href="#" class="nav-link login-button" th:href="@{/main}">Zaloguj się</a>
@@ -102,51 +105,51 @@
     <table style="border: 1px solid; padding: 10px; margin: auto;">
       <tr>
         <td>Płeć:</td>
-        <td><input type="text" field="*{zwierzeta.Plec}" name="Plec"/></td>
+        <td><input type="text" field="*{zwierzeta.Plec}" name="Plec" required/></td>
       </tr>
       <tr>
         <td>Waga:</td>
-        <td><input type="text" field="*{zwierzeta.Waga}" name="Waga"/></td>
+        <td><input type="text" field="*{zwierzeta.Waga}" name="Waga" required/></td>
       </tr>
       <tr>
         <td>Wzrost:</td>
-        <td><input type="text" field="*{zwierzeta.Wzrost}" name="Wzrost"/></td>
+        <td><input type="text" field="*{zwierzeta.Wzrost}" name="Wzrost" required/></td>
       </tr>
       <tr>
         <td>Długość:</td>
-        <td><input type="text" field="*{zwierzeta.Dlugosc}" name="Dlugosc"/></td>
+        <td><input type="text" field="*{zwierzeta.Dlugosc}" name="Dlugosc" required/></td>
       </tr>
       <tr>
         <td>Kolor:</td>
-        <td><input type="text" field="*{zwierzeta.Kolor}" name="Kolor"/></td>
+        <td><input type="text" field="*{zwierzeta.Kolor}" name="Kolor" required/></td>
       </tr>
       <tr>
         <td>Chip:</td>
-        <td><input type="text" field="*{zwierzeta.Chip}" name="Chip"/></td>
+        <td><input type="text" field="*{zwierzeta.Chip}" name="Chip" required/></td>
       </tr>
       <tr>
         <td>Wiek:</td>
-        <td><input type="text" field="*{zwierzeta.Wiek}" name="Wiek"/></td>
+        <td><input type="text" field="*{zwierzeta.Wiek}" name="Wiek" required/></td>
       </tr>
       <tr>
         <td>Gatunek:</td>
-        <td><input type="text" field="*{zwierzeta.Gatunek}" name="Gatunek"/></td>
+        <td><input type="text" field="*{zwierzeta.Gatunek}" name="Gatunek" required/></td>
       </tr>
       <tr>
         <td>Rasa:</td>
-        <td><input type="text" field="*{zwierzeta.Rasa_zwierzecia}" name="Rasa_zwierzecia"/></td>
+        <td><input type="text" field="*{zwierzeta.Rasa_zwierzecia}" name="Rasa_zwierzecia" required/></td>
       </tr>
       <tr>
         <td>Data przyjęcia:</td>
-        <td><input type="text" field="*{zwierzeta.Data_przyjecia}" name="Data_przyjecia"/></td>
+        <td><input type="text" field="*{zwierzeta.Data_przyjecia}" name="Data_przyjecia" required/></td>
       </tr>
       <tr>
         <td>Numer schroniska:</td>
-        <td><input type="text" field="*{zwierzeta.Nr_schroniska}" name="Nr_schroniska"/></td>
+        <td><input type="text" field="*{zwierzeta.Nr_schroniska}" name="Nr_schroniska" required/></td>
       </tr>
       <tr>
         <td>Numer adopcji:</td>
-        <td><input type="text" field="*{zwierzeta.Numer_adopcji}" name="Numer_adopcji"/></td>
+        <td><input type="text" field="*{zwierzeta.Numer_adopcji}" name="Numer_adopcji" required/></td>
       </tr>
       <tr>
         <td colspan="2"><button type="submit">Zapisz</button></td>
