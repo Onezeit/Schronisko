@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
   <title>Nowe zwierze</title>
@@ -87,17 +88,15 @@
 
 </head>
 <body>
-<div class="top-bar">
-  <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
-  <a href="#" class="nav-link main-button" th:href="@{/main}">Main</a>
-  <a href="#" class="nav-link login-button" th:href="@{/main}">Login</a>
+<div class="center">
+  <a href="#" class="nav-link home-button" th:href="@{/index}">Strona główna</a>
+  <a href="#" class="nav-link main-button" th:href="@{/main}">Panel admina</a>
+  <a href="#" class="nav-link login-button" th:href="@{/main}">Zaloguj się</a>
 </div>
 
 
 <div style="text-align: center;">
   <h1 class ="text" >Wpisz nowy rekord</h1>
-
-  <br/>
 
   <form th:action="@{/save}" th:object="${zwierzeta}" method="post">
     <table style="border: 1px solid; padding: 10px; margin: auto;">

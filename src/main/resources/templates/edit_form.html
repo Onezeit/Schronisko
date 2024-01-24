@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Edytuj</title>
@@ -93,9 +94,9 @@
 <body>
 
 <div class="top-bar">
-  <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
-  <a href="#" class="nav-link main-button" th:href="@{/main}">Main</a>
-  <a href="#" class="nav-link login-button" th:href="@{/main}">Login</a>
+  <a href="#" class="nav-link home-button" th:href="@{/index}">Strona główna</a>
+  <a href="#" class="nav-link main-button" th:href="@{/main}">Panel admina</a>
+  <a href="#" class="nav-link login-button" th:href="@{/main}">Zaloguj się</a>
 </div>
 
 <div align="center">
@@ -103,60 +104,56 @@
   <h1>Zmodyfikuj rekord</h1>
   <!-- End header line -->
   <br/>
-  <form>
+    <form th:action="@{'/update/' + ${zwierzeta.Nr_zwierzecia}}" th:object="${zwierzeta}" method="post">
     <!-- Table row -->
     <table border = "1" cellpadding = "10">
       <tr>
-        <td>Numer zwierzęcia:</td>
-        <td><input type="text" field="*{Nr_zwierzecia}" name="Nr_zwierzecia"/></td>
-      </tr>
-      <tr>
         <td>Płeć:</td>
-        <td><input type="text" field="*{Plec}" name="Plec"/></td>
+        <td><input type="text" field="*{zwierzeta.Plec}" name="Plec" required/></td>
       </tr>
       <tr>
         <td>Waga:</td>
-        <td><input type="text" field="*{Waga}" name="Waga"/></td>
+        <td><input type="text" field="*{zwierzeta.Waga}" name="Waga" required/></td>
       </tr>
       <tr>
         <td>Wzrost:</td>
-        <td><input type="text" field="*{Wzrost}" name="Wzrost"/></td>
+        <td><input type="text" field="*{zwierzeta.Wzrost}" name="Wzrost" required/></td>
       </tr>
       <tr>
         <td>Długość:</td>
-        <td><input type="text" field="*{Dlugosc}" name="Dlugosc"/></td>
+        <td><input type="text" field="*{zwierzeta.Dlugosc}" name="Dlugosc" required/></td>
       </tr>
       <tr>
         <td>Kolor:</td>
-        <td><input type="text" field="*{Kolor}" name="Kolor"/></td>
+        <td><input type="text" field="*{zwierzeta.Kolor}" name="Kolor" required/></td>
       </tr>
       <tr>
         <td>Chip:</td>
-        <td><input type="text" field="*{Chip}" name="Chip"/></td>
+        <td><input type="text" field="*{zwierzeta.Chip}" name="Chip" required/></td>
       </tr>
       <tr>
         <td>Wiek:</td>
-        <td><input type="text" field="*{Wiek}" name="Wiek"/></td>
+        <td><input type="text" field="*{zwierzeta.Wiek}" name="Wiek" required/></td>
       </tr>
       <tr>
         <td>Gatunek:</td>
-        <td><input type="text" field="*{Gatunek}" name="Gatunek"/></td>
+        <td><input type="text" field="*{zwierzeta.Gatunek}" name="Gatunek" required/></td>
       </tr>
       <tr>
         <td>Rasa zwierzecia:</td>
-        <td><input type="text" field="*{Rasa_zwierzecia}" name="Rasa_zwierzecia"/></td>
+        <td><input type="text" field="*{zwierzeta.Rasa_zwierzecia}" name="Rasa_zwierzecia" required/></td>
       </tr>
       <tr>
         <td>Data przyjecia:</td>
-        <td><input type="text" field="*{Data_przyjecia}" name="Data_przyjecia"/></td>
+        <td><input type="text" field="*{zwierzeta.Data_przyjecia}" name="Data_przyjecia" required/></td>
       </tr>
       <tr>
         <td>Numer schroniska:</td>
-        <td><input type="text" field="*{Nr_schroniska}" name="Nr_schroniska"/></td>
+        <td><input type="text" field="*{zwierzeta.Nr_schroniska}" name="Nr_schroniska" required/></td>
       </tr>
       <tr>
         <td>Numer adopcji:</td>
-        <td><input type="text" field="*{Numer_adopcji}" name="Numer_adopcji"/></td>
+        <td><input type="text" field="*{zwierzeta.Numer_adopcji}" name="Numer_adopcji" required/></td>
       </tr>
       <!-- Button save -->
       <tr>

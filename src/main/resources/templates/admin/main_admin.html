@@ -214,8 +214,8 @@
 <body>
 
 <div class="top-bar">
-    <a href="#" class="nav-link home-button" th:href="@{/index}">Home</a>
-    <a href="#" class="nav-link main-button" >Strona główna</a>
+    <a href="#" class="nav-link home-button" th:href="@{/index}">Strona główna</a>
+    <a href="#" class="nav-link main-button" >Panel admina</a>
     <a href="#" class="nav-link login-button" >Zaloguj się</a>
 </div>
 <div class="header">
@@ -280,10 +280,10 @@
             <td th:text="${zwierzeta.Data_przyjecia}">dataPrzyjecia</td>
             <td th:text="${zwierzeta.Nr_schroniska}">nrSchroniska</td>
             <td th:text="${zwierzeta.Numer_adopcji}">numerAdopcji</td>
-            <td>
+            <td class="edit-delete-links">
                 <a class="edit" th:href="@{ '/edit/' + ${zwierzeta.Nr_zwierzecia}} ">Edytuj</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="delete" th:href="@{'/delete/' + ${zwierzeta.Nr_zwierzecia}}">Usuń</a>
+                <a class="btn btn-danger" th:href="@{'/delete/' + ${zwierzeta.Nr_zwierzecia}}" onclick="return confirm('Czy na pewno chcesz usunąć rekord?')">Usuń</a>
             </td>
             </td>
         </tr>
@@ -313,6 +313,10 @@ document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 };
 </script>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 </html>

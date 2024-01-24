@@ -74,6 +74,7 @@ public class AppController implements WebMvcConfigurer {
 
         @RequestMapping(value = "/save", method = RequestMethod.POST)
         public String save(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta) {
+            System.out.println(zwierzeta.toString());
             dao.save(zwierzeta);
 
             return "redirect:/";
@@ -88,9 +89,9 @@ public class AppController implements WebMvcConfigurer {
             return mav;
         }
 
-        @RequestMapping(value = "/update", method = RequestMethod.POST)
-        public String update(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta) {
-            dao.update(zwierzeta);
+        @RequestMapping(value = "/update/{Nr_zwierzecia}", method = RequestMethod.POST)
+        public String update(@ModelAttribute("zwierzeta") Zwierzeta zwierzeta, @PathVariable(name="Nr_zwierzecia") int Nr_zwierzecia) {
+            dao.update(Nr_zwierzecia, zwierzeta);
 
             return "redirect:/";
         }

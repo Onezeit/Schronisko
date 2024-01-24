@@ -1,23 +1,23 @@
 package bdbt_bada_project.SpringApplication;
 
 public class Zwierzeta {
-    private Integer Nr_zwierzecia;
+    private int Nr_zwierzecia;
     private String Plec;
     private float Waga;
     private float Wzrost;
     private float Dlugosc;
     private String Kolor;
     private Boolean Chip;
-    private Integer Wiek;
+    private int Wiek;
     private String Gatunek;
     private String Rasa_zwierzecia;
     private String Data_przyjecia;
-    private Integer Nr_schroniska;
-    private Integer Numer_adopcji;
+    private int Nr_schroniska;
+    private int Numer_adopcji;
 
     public Zwierzeta(){
     }
-    public Zwierzeta(Integer Nr_zwierzecia, String Plec, float Waga, float Wzrost, float Dlugosc, String Kolor, Boolean Chip, Integer Wiek, String Gatunek, String Rasa_zwierzecia, String Data_przyjecia, Integer Nr_schroniska, Integer Numer_adopcji) {
+    public Zwierzeta(int Nr_zwierzecia, String Plec, float Waga, float Wzrost, float Dlugosc, String Kolor, Boolean Chip, int Wiek, String Gatunek, String Rasa_zwierzecia, String Data_przyjecia, int Nr_schroniska, int Numer_adopcji) {
         this.Nr_zwierzecia = Nr_zwierzecia;
         this.Plec = Plec;
         this.Waga = Waga;
@@ -33,7 +33,7 @@ public class Zwierzeta {
         this.Numer_adopcji = Numer_adopcji;
     }
 
-    public Integer getNr_zwierzecia() {
+    public int getNr_zwierzecia() {
         return Nr_zwierzecia;
     }
 
@@ -61,7 +61,7 @@ public class Zwierzeta {
         return Chip;
     }
 
-    public Integer getWiek() {
+    public int getWiek() {
         return Wiek;
     }
 
@@ -77,15 +77,15 @@ public class Zwierzeta {
         return Data_przyjecia;
     }
 
-    public Integer getNr_schroniska() {
+    public int getNr_schroniska() {
         return Nr_schroniska;
     }
 
-    public Integer getNumer_adopcji() {
+    public int getNumer_adopcji() {
         return Numer_adopcji;
     }
 
-    public void setNr_zwierzecia(Integer Nr_zwierzecia) {
+    public void setNr_zwierzecia(int Nr_zwierzecia) {
         this.Nr_zwierzecia = Nr_zwierzecia;
     }
 
@@ -113,7 +113,7 @@ public class Zwierzeta {
         this.Chip = Chip;
     }
 
-    public void setWiek(Integer Wiek) {
+    public void setWiek(int Wiek) {
         this.Wiek = Wiek;
     }
 
@@ -129,11 +129,11 @@ public class Zwierzeta {
         this.Data_przyjecia = Data_przyjecia;
     }
 
-    public void setNr_schroniska(Integer Nr_schroniska) {
+    public void setNr_schroniska(int Nr_schroniska) {
         this.Nr_schroniska = Nr_schroniska;
     }
 
-    public void setNumer_adopcji(Integer Numer_adopcji) {
+    public void setNumer_adopcji(int Numer_adopcji) {
         this.Numer_adopcji = Numer_adopcji;
     }
 
